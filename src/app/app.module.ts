@@ -17,6 +17,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
 
 import 'hammerjs';
 
@@ -56,15 +57,16 @@ import { PromotionService } from './services/promotion.service';
 		MatCardModule,
 		MatButtonModule,
 		MatDialogModule,
-		MatFormFieldModule, 
-    MatInputModule,
+		MatFormFieldModule,
+		MatInputModule,
 		MatCheckboxModule,
 		MatSelectModule,
-    MatSlideToggleModule,
+		MatSlideToggleModule,
 		AppRoutingModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		MatSliderModule
 	],
 	providers: [DishService, LeaderService, PromotionService],
 	bootstrap: [AppComponent],
