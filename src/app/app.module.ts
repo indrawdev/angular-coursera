@@ -35,6 +35,7 @@ import { LoginComponent } from './login/login.component';
 import { DishService } from './services/dish.service';
 import { LeaderService } from './services/leader.service';
 import { PromotionService } from './services/promotion.service';
+import { FeedbackService } from './services/feedback.service';
 
 import { baseURL } from './shared/baseurl';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -74,7 +75,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 		MatSliderModule,
 		HttpClientModule
 	],
-	providers: [DishService, LeaderService, PromotionService,
+	providers: [DishService, LeaderService, PromotionService, FeedbackService,
 		{ provide: 'BaseURL', useValue: baseURL }
 	],
 	bootstrap: [AppComponent],
