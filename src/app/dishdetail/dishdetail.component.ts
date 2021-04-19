@@ -6,7 +6,7 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 import { Comment } from '../shared/comment';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 @Component({
 	selector: 'app-dishdetail',
@@ -23,7 +23,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 				opacity: 0
 			})),
 			transition('* => *', animate('0.5s ease-in-out'))
-		])
+		]),
+		flyInOut(),
+		expand()
 	]
 })
 
@@ -59,6 +61,7 @@ export class DishdetailComponent implements OnInit {
 	dishcopy: Dish;
 
 	visibility = 'shown';
+	
 
 
 	constructor(private dishservice: DishService,
