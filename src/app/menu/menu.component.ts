@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
+import { baseURL } from '../shared/baseurl';
 
 @Component({
 	selector: 'app-menu',
