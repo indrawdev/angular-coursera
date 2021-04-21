@@ -1,12 +1,24 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
-import { ProcessHTTPMsgService } from './process-httpmsg.service';
+@Injectable({
+	providedIn: 'root'
+})
+export class ProcessHTTPMsgService {
 
-describe('ProcessHttpmsgService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+	constructor() {
+	}
 
-  it('should be created', () => {
-    const service: ProcessHTTPMsgService = TestBed.get(ProcessHTTPMsgService);
-    expect(service).toBeTruthy();
-  });
-});
+	public handleError(error: HttpErrorResponse | any) {
+		let errMsg: string;
+
+		if (error.error instanceof ErrorEvent) {
+			errMsg = error.error.message;
+		} else {
+			errMsg = `${error.status} - ${error.statusText || ''} ${error.error}`;
+		}
+
+		return throwError(errMsg);
+	}
+}
