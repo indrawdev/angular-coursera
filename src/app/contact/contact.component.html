@@ -80,11 +80,6 @@
 			<button type="submit" mat-button class="background-primary text-floral-white"
 				[disabled]="feedbackForm.invalid">Submit</button>
 		</form>
-		<mat-card *ngIf="isLoading && !isShowingResponse"
-			style="display: flex; justify-content: center; align-items: center" @expand>
-			<mat-progress-spinner color="primary" mode="indeterminate">
-			</mat-progress-spinner>
-		</mat-card>
 		<mat-card *ngIf="isShowingResponse" style="display: flex;" @expand>
 			<mat-card-header>
 				<mat-card-title>Your Submission</mat-card-title>
@@ -123,6 +118,10 @@
 					</tr>
 				</table>
 			</mat-card-content>
+		</mat-card>
+		<mat-card *ngIf="isLoading && !isShowingResponse"
+			style="display: flex; justify-content: center; align-items: center" @expand>
+			<mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
 		</mat-card>
 	</div>
 </div>
